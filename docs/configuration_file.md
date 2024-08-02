@@ -1,16 +1,15 @@
-# Configuration JSON File
+# 配置 JSON 文件
 
-By loading a JSON file, you can set VolView's configuration:
+通过加载一个JSON文件，你可以设置VolView的配置:
 
-- Starting view layout (Axial Only, 3D Primary, etc).
-- Labels for tools
-- Visibility of Sample Data section
-- Keyboard shortcuts
+- 起始视图布局(仅轴向，3D主视图等)。
+- 工具标签
+- 示例数据部分的可见性
+- 键盘快捷键
 
-## Starting view layout
+## 起始视图布局
 
-The `activeLayout` key has options (Axial Only, 3D Primary, etc.) defined in `config.ts`
-
+`activeLayout` 键在`config.ts` 文件中定义了选项(Axial Only, 3D Primary,等)。
 ```json
 {
   "layout": {
@@ -19,11 +18,9 @@ The `activeLayout` key has options (Axial Only, 3D Primary, etc.) defined in `co
 }
 ```
 
-## Labels for tools
+## 工具标签
 
-Each tool type (Rectangle, Polygon, etc.) can have tool specific labels. To share labels
-across tools, define the `defaultLabels` key and don't provide labels for a tool that
-should use the default labels.
+每种工具类型(矩形，多边形等)都可以有工具特定的标签。共享标签跨工具，定义 `defaultLabels` 键，不要为应该使用默认标签的工具提供标签。
 
 ```json
 {
@@ -36,10 +33,10 @@ should use the default labels.
 }
 ```
 
-## Segment Group File Format
+## 段组文件格式
 
-The `segmentGroupSaveFormat` key specifies the file extension of the segment group images
-VolView will include in the volview.zip file.
+`segmentGroupSaveFormat` 键指定VolView将包含在VolView.zip文件中的段组图像的文件扩展名。
+
 
 ```json
 {
@@ -49,19 +46,19 @@ VolView will include in the volview.zip file.
 }
 ```
 
-Working segment group file formats:
+工作段组文件的扩展名可以是以下格式:
 
 hdf5, iwi.cbor, mha, nii, nii.gz, nrrd, vtk
 
-## Automatic Segment Groups by File Name
+## 按文件名自动组段
 
-When loading files, VolView can automatically convert images to segment groups
-if they follow a naming convention. For example, an image with name like `foo.segmentation.bar`
-will be converted to a segment group for a base image named like `foo.baz`.  
-The `segmentation` extension is defined by the `io.segmentGroupExtension` key, which takes a
-string. Files `foo.[segmentGroupExtension].bar` will be automatilly converted to segment groups for a base image named `foo.baz`. The default is `''` and will disable the feature.
+加载文件时，VolView可以自动将图像转换为段组，如果他们遵循命名约定。例如，名称为 `foo.segmentation.bar` 将被转换为名为 `foo.baz` 的基本图像的段组。
 
-This will define `myFile.seg.nrrd` as a segment group for a `myFile.nii` base file.
+`segmentation` 扩展是由 `io.segmentGroupExtension` 键定义的。它接受一个字符串。
+
+默认值为`''`，将禁用该功能。
+
+这里定义 `myFile.seg.nrrd` 作为 `myFile.nii` 基础文件的段组。
 
 ```json
 {
@@ -71,12 +68,12 @@ This will define `myFile.seg.nrrd` as a segment group for a `myFile.nii` base fi
 }
 ```
 
-## Keyboard Shortcuts
+## 快捷键
 
-Configure the keys to activate tools, change selected labels, and more.
-All [shortcut actions](https://github.com/Kitware/VolView/blob/main/src/constants.ts#L53) are under the `ACTIONS` variable.
+配置键以激活工具、更改所选标签等。
+所有 [快捷操作](..\src\constants.ts#L24) 都在 `ACTIONS` 变量下。
 
-To configure a key for an action, add its action name and the key(s) under the `shortcuts` section. For key combinations, use `+` like `Ctrl+f`.
+要为操作配置一个键，请在 `shortcuts` 部分下添加其操作名称和键。对于组合键，使用`+` ，就像 `Ctrl+f` 一样。
 
 ```json
 {
@@ -87,9 +84,9 @@ To configure a key for an action, add its action name and the key(s) under the `
 }
 ```
 
-## Visibility of Sample Data section
+## 示例数据可见性
 
-Simplify the data browser by hiding the Sample Data expandable section.
+隐藏示例样本数据可以简化浏览器界面。
 
 ```json
 {
@@ -99,7 +96,7 @@ Simplify the data browser by hiding the Sample Data expandable section.
 }
 ```
 
-## Example JSON:
+## 示例 JSON:
 
 ```json
 {
@@ -115,7 +112,7 @@ Simplify the data browser by hiding the Sample Data expandable section.
 }
 ```
 
-## All options:
+## 全部选项:
 
 ```json
 {

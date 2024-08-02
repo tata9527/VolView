@@ -2,30 +2,28 @@
 
 ![welcome screen](./assets/01-volview-welcome-notes.jpg)
 
-## Tabs
+### 数据
 
-### Data
+关于已加载的患者数据和非dicom数据的信息。当前显示的图像数据以蓝色突出显示。
 
-Information on the Patient data and non-DICOM data that have been loaded. The currently display image data is highlighted in blue.
+**样本数据** 提供了各种DICOM数据，可用于快速探索VolView的功能。当您选择一个样本数据集时，该数据从 [http://data.kitware.com/](https://data.kitware.com/#collection/586fef9f8d777f05f44a5c86/folder/634713cf11dab81428208e1e)下载。
 
-**Sample Data** presents a variety of DICOM data that can be used to quickly explore the capabilities of VolView. When you select a sample dataset, that data is downloaded from [http://data.kitware.com/](https://data.kitware.com/#collection/586fef9f8d777f05f44a5c86/folder/634713cf11dab81428208e1e).
+### 注释
 
-### Annotations
+列出对当前加载的数据所做的标尺和其他度量。
 
-Lists the ruler and other measures that have been made on the currently loaded data.
+### 渲染
 
-### Rendering
+用于3D电影体渲染的控件。
 
-Controls for the 3D cinematic volume rendering.
+## 加载/保存 状态
 
-## Load / Save State
+还原或创建捕获应用程序及其数据的当前配置的本地文件。这包括布局、注释、过场渲染设置和指定的所有其他选项。本地文件是json格式，因此它为VolView与其他应用程序和工作流集成提供了基础。
 
-Restore or create a local file that captures the current configuration of the application and its data. This includes the layout, annotations, cinematic rendering settings, and all other options specified. The local file is in json format, so it provides a basis for integrating VolView with other applications and workflows.
+## 通知和设置
 
-## Notifications and Settings
+在这里收集信息和错误消息。最近发布的通知数量将显示在通知图标的顶部。设置允许您在黑暗或明亮主题之间切换。
 
-Information and error messages collect here. The number of recently posted notifications will appear on top of the notification icon. Settings allow you to toggle between a dark or light theme.
+## 中部窗口
 
-## Central Window
-
-Drag-and-drop DICOM and image data here. Receives files, folders, or zip files. Or you can click within this window to bring up a file browser.
+在这里拖放DICOM和图像数据。接收文件、文件夹或zip文件。或者您可以在此窗口中单击以打开文件浏览器。

@@ -1,4 +1,4 @@
-# Screenshot Gallery
+# 截图展示
 
 <div class="gallery">
 <a href="./assets/VolView-Overview.jpg"><img alt="Overview" src="./assets/VolView-Overview.jpg"></a>

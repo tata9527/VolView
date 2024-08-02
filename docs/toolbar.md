@@ -1,63 +1,62 @@
-# Toolbar
+# 工具栏
 
-## Layout
+## 布局
 
-Use the layout button to choose between window arrangements. As in all things, if you have a particular layout that you would like to see added, please make a feature request on our [issue tracker](https://github.com/Kitware/VolView/issues).
+使用布局按钮在窗口安排之间进行选择。在所有的事情，如果你想添加特定的布局，请提出功能请求[问题跟踪器](https://github.com/Kitware/VolView/issues)。
 
-![Layout](./assets/07-volview-layout-notes.jpg)
+![布局](./assets/07-volview-layout-notes.jpg)
 
-## 2D View left mouse button
+## 2D视图鼠标左键
 
-Window / Level, Pan, Zoom, or Crosshairs: Select these options to control the function of the left mouse button in the 2D windows.
+窗口/等级、平移、缩放或十字准线:选择这些选项可以控制鼠标左键在2D窗口中的功能。
 
 ![Window-Level, Pan, Zoom, Crosshairs](./assets/10-volview-wl-pan-zoom-notes.jpg)
 
-## 2D Annotations
+## 2D 标注
 
-The "Annotations" tab lists the drawn, vector based, annotation tools. Each tool in the list has a "scroll to slice" and delete button.
+“标注”选项卡列出了绘制的、基于矢量的注释工具。列表中的每个工具都有一个“滚动到切片”和删除按钮。
 
-### Paint
+### 绘画
 
-When the paint tool is selected, you can paint in any 2D window. Click on the paint tool a second time to bring up a menu of colors and adjust the brush size.
+当选择绘画工具时，您可以在任何2D窗口中绘画。第二次点击绘画工具，调出颜色菜单，调整笔刷大小。
+### 矩形
 
-### Rectangle
+当选择矩形工具时，使用鼠标左键可以放置和调整矩形控制点。
+右键单击矩形控制点以删除该矩形。
+“标注”选项卡列出了所有矩形，并提供跳转到和删除控件。
 
-When the rectangle tool is selected, the left mouse button is used to place and adjust rectangle control points.
-Right click a rectangle control point to delete the rectangle.
-The "Annotations" tab lists all rectangles and provides jump-to and delete controls.
+可以用标签标记矩形注释。使用左上角的调色板或 `q` 或 `w`键来选择活动标签。
 
-Rectangle annotations can be tagged with a label. Use the palette in the upper left or the `q` or `w` keys to select the active label.
+### 多边形
 
-### Polygon
+选择多边形工具:
 
-With the polygon tool selected:
+- 放置点:鼠标左键。
+- 删除最后放置点:鼠标右键。
+- 删除所有点: `Esc` 键。 
+- 放置3个点后关闭多边形:点击第一个点，按`Enter`键或双击鼠标左键。
 
-- Place points: left mouse button.
-- Remove last placed point: right mouse button.
-- Remove all points: `Esc` key.
-- Close a polygon after placing 3 points: Click first point, press `Enter` key or double click left mouse.
+闭合多边形后:
 
-After closing a polygon:
+- 移动点:用鼠标左键拖动点。
+- 添加点:鼠标左键在多边形线上。
+- 删除点:右键单击点，选择删除点。
+- 删除多边形:右键单击点或线，选择删除多边形。
 
-- Move point: Drag point with left mouse button.
-- Add point: Left mouse button on polygon line.
-- Delete point: right click point and select Delete Point.
-- Delete polygon: right click point or line and select Delete Polygon.
+多边形注释可以用标签标记。使用左上角的调色板或 `q `或 `w` 键来选择活动标签。
 
-Polygon annotations can be tagged with a label. Use the palette in the upper left or the `q` or `w` keys to select the active label.
+### 直尺
 
-### Ruler
+当选择直尺工具时，使用鼠标左键放置和调整标尺末端标记。右键单击结束标记将显示一个弹出菜单，用于删除该直尺。切换到 `标注` 选项卡，查看当前加载数据的注释列表。选择所列标尺旁边的位置图标以跳转到其切片。选择要删除该标尺的垃圾桶。
 
-When the ruler tool selected, the left mouse button is used to place and adjust ruler end-markers. Right clicking on a end-marker displays a pop-up menu for deleting that ruler. Switch to the "Annotations" tab to see a list of annotations made to currently loaded data. Select the location icon next to a listed ruler to jump to its slice. Select the trashcan to delete that ruler.
+标尺注释可以用标签标记。使用左上角的调色板或 `q` 或 `w` 键来选择活动标签。
 
-Ruler annotations can be tagged with a label. Use the palette in the upper left or the `q` or `w` keys to select the active label.
+![2D 标注](./assets/11-volview-paint-notes.jpg)
 
-![2D Annotations](./assets/11-volview-paint-notes.jpg)
+### 标签的配置
 
-### Label Configuration
-
-If VolView loads a JSON file matching the schemas below, labels are added to the 2D annotation tools.
-Example configuration JSON:
+如果VolView加载一个JSON文件匹配下面的模式，标签被添加到2D标注工具。
+示例配置JSON:
 
 ```json
 {
@@ -75,7 +74,7 @@ Example configuration JSON:
 }
 ```
 
-Label sections could be null to disable labels for a tool.
+标签部分可以为空，以禁用工具的标签。
 
 ```json
 {
@@ -98,6 +97,9 @@ Label sections could be null to disable labels for a tool.
 Tools will fallback to `defaultLabels` section if the tool has no specific labels property,
 ie `rectangleLabels` or `rulerLabels`.
 
+如果工具没有特定的标签属性，工具将回退到 `defaultLabels` 部分。
+即 `rectangleLabels` 或 `rulerLabels`。
+
 ```json
 {
   "labels": {
@@ -109,10 +111,10 @@ ie `rectangleLabels` or `rulerLabels`.
 }
 ```
 
-## 3D Crop
+## 3D 剪裁
 
-Select this tool to adjust the extent of data shown in the 3D rendering. In the 3D window you can pick and move the corner, edge, and side markers to make adjustments. In the 2D windows, grab and move the edges of the bounding box overlaid on the data.
+选择此工具可调整3D渲染中显示的数据范围。在3D窗口中，您可以选择并移动角落，边缘和侧面标记来进行调整。在2D窗口中，抓取并移动覆盖在数据上的边界框的边缘。
 
-![Crop](./assets/13-volview-crop.jpg)
+![剪裁](./assets/13-volview-crop.jpg)
 
 [**_Watch the video!_**](https://youtu.be/Bj4ijh_VLUQ)

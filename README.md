@@ -1,44 +1,43 @@
 # VolView
 
-![A screenshot of a sample VolView session](./documentation/content/gallery/VolView-Overview.jpg)
+![A screenshot of a sample VolView session](./docs/assets/VolView-Overview.jpg)
 
-## Try it
+## 试用
 
-Try VolView online: https://volview.kitware.app/
+在线试用volview: https://volview.kitware.app/
 
-## Introduction
+## 介绍
 
-VolView is an open source radiological viewer developed for clinical professionals. With VolView, you can have a deeper visual understanding of your data through interactive, cinematic volume rendering and easily visualize your DICOM data in 3D. Since VolView runs in your browser, you don’t need to install software and your data stays securely on your machine.
+VolView是为临床专业人员开发的开源放射查看器。使用VolView，您可以通过交互式电影体渲染对数据有更深入的视觉理解，并轻松地将DICOM数据可视化为3D。由于VolView在你的浏览器中运行，你不需要安装软件，你的数据可以安全地保存在你的机器上。
 
 Major features of VolView include:
+VolView的主要功能包括:
 
-1. Drag-and-drop DICOM: Drag DICOM images onto VolView, and they will be quickly parsed and presented as thumbnails.  Click on a thumbnail, and the data is quickly loaded and presented as 2D slices and a 3D cinematic volume rendering.
+1. 拖放操作：将DICOM图像拖放到VolView上，它们将被快速解析并显示为缩略图。点击缩略图，数据就会被快速加载，并以2D切片和3D电影体渲染的形式呈现。
 
-2. Cinematic Volume Rendering: Create beautiful renderings and gain new insights into your data with only a few clicks.  VolView provides three cinematic volume rendering modes and intuitive controls for each.  We've also provides simple ways to control lighting and multiple presets to get you started.
+2. 电影体渲染:创建美丽的渲染，并获得新的见解，您的数据，只需点击几下。VolView提供了三种电影体量渲染模式和直观的控制。我们还提供了简单的方法来控制照明和多个预设，让你开始。
 
-3. Annotations and measures: We have provided a small set of tools for painting, measuring, and cropping, and that toolset will be rapidly expanding.  If you have suggestions for new tools or for improving VolView in general, please leave feedback at our [Issue Tracker](https://github.com/Kitware/VolView/issues).
+3. 注释和测量量:我们已经提供了一小组用于绘制、度量和裁剪的工具，并且该工具集将迅速扩展。如果您有关于新工具或改进VolView的建议，请在我们的[问题跟踪器](https://github.com/Kitware/VolView/issues)留下反馈。
 
-4. Simple, Scalable, and Secure: Simply visit a website to install VolView.  Once it is running, all data handling, processing, and visualization occurs on your machine.  Data you load into VolView never leaves your machine.  And VolView is designed to run on any web browser: from the one on your phone to the one running on your most powerful workstations.  It will take advantage of local GPU resources to accelerate its rendering processes, but if none is available, it will still generate the same high quality renderings, albeit a bit slower.
+4. 简单，可扩展和安全:只需访问一个网站安装VolView。一旦它开始运行，所有的数据处理、处理和可视化都在您的机器上进行。你载入VolView的数据永远不会离开你的机器。VolView可以在任何浏览器上运行:从你手机上的浏览器到你最强大的工作站上的浏览器。它将利用本地GPU资源来加速其渲染过程，但如果没有可用的，它仍然会生成相同的高质量渲染，尽管有点慢。
+5. 未来的基础：VolView旨在为您未来的项目和产品提供基础。它是开源的，免费供商业和学术使用。您可以自己修改它，或者Kitware可以帮助您自定义它，以支持客户机-服务器工作流，提供简化的接口和工具，并传播您的品牌。
 
-5. A foundation for the future: VolView is meant to serve as a foundation for your future projects and products.  It is open-source and free for commercial and academic use.  You may modify it yourself, or Kitware can help you customize it to support client-server workflows, provide streamlined interfaces and tools, and carry your brand.
+## 文档
 
-## Documentation
+访问: https://kitware.github.io/VolView 阅读文档。
 
-Visit: https://kitware.github.io/VolView to read the documentation.
+# 引用
 
-# Citation
+如果你发现VolView对你的工作有用，请引用我们关于电影渲染的论文:
 
-If you find VolView to be useful for your work, please cite our paper on cinematic rendering:
+[Jiayi Xu, Gaspard Thevenon, Timothee Chabat, Matthew McCormick, Forrest Li,Tom Birdsong,Ken Martin, Yueh Lee, and Stephen Aylward, "在浏览器中对医学图像进行交互式，电影质量的体积渲染", MICCAI 2022 AE-CAI Workshop, Singapore, Sept 19, 2022, Journal version accepted for publication in Computer Methods in Computer Methods in Biomechanics and Biomedical Engineering](docs/Paper48_IICVR_camera_ready_paper.pdf): 
 
-[Jiayi Xu, Gaspard Thevenon, Timothee Chabat, Matthew McCormick, Forrest Li,Tom Birdsong,Ken Martin, Yueh Lee, and Stephen Aylward, "Interactive, in-browser cinematic volume rendering of medical images", MICCAI 2022 AE-CAI Workshop, Singapore, Sept 19, 2022, Journal version accepted for publication in Computer Methods in Computer Methods in Biomechanics and Biomedical Engineering](https://workshops.ap-lab.ca/aecai2022/wp-content/uploads/sites/10/2022/09/Paper48_IICVR_camera_ready_paper.pdf): 
+要包含对VolView 4.0源代码的引用，请使用以下DOI: [![DOI](src\assets\logo.svg)](https://github.com/Kitware/VolView?tab=readme-ov-file)
 
-To include a reference to the source code of VolView 4.0, please use this DOI:
-[![DOI](https://zenodo.org/badge/248073292.svg)](https://zenodo.org/badge/latestdoi/248073292)
+# 定制VolView
 
-# Customizing VolView
+请参阅 [Contributing.md](Contributing.md) 文档。
 
-See the [Contributing.md](CONTRIBUTING.md) document.
-
-# Acknowledgements
+# 致谢
 
 This work was funded, in part, by the NIH via NIBIB and NIGMS R01EB021396, NIBIB R01EB014955, NCI R01CA220681, and NINDS R42NS086295.

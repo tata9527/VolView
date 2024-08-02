@@ -1,63 +1,63 @@
-# What is VolView?
+# VolView是什么?
 
-VolView is an open source radiological viewer developed for clinical professionals. With VolView, you can gain a deeper understanding of your data through high-quality, interactive visualizations, including cinematic volume renderings. Since VolView runs in your browser, you do not need to install software, and your data stays securely on your machine.
+VolView是为临床专业人员开发的开源放射查看器。使用VolView，您可以通过高质量的交互式可视化(包括电影体效果图)更深入地了解数据。由于VolView在你的浏览器中运行，你不需要安装软件，你的数据可以安全地保存在你的机器上。
 
 ![Welcome](./assets/VolView-Overview.jpg)
 
-## Features
+## 产品特点
 
-Major features of VolView include:
+VolView的主要功能包括:
 
-1. **Cinematic Volume Rendering**: Create beautiful renderings and gain new insights into your data with only a few clicks.  VolView provides three cinematic volume rendering modes and intuitive controls for each.  We've also provides simple ways to control lighting and multiple presets to get you started.
+1. **影片体绘制**: 只需点击几下即可创建漂亮的渲染图并获得对数据的新见解。VolView提供了三种电影体量渲染模式和直观的控制。我们还提供了简单的方法来控制照明和多个预设，让你开始。
 
-2. **Drag-and-Drop DICOM**: Drag DICOM images onto VolView, and they will be quickly parsed and presented as thumbnails.  Click on a thumbnail, and the data is quickly loaded and presented as 2D slices and a 3D cinematic volume rendering.
+2. **拖拽操作 DICOM 影像**: 将DICOM图像拖到VolView上，它们将被快速解析并显示为缩略图。点击缩略图，数据就会被快速加载，并以2D切片和3D电影体渲染的形式呈现。
 
-3. **Annotations and Measures**: We have provided a small set of tools for painting, measuring, and cropping, and we are actively working to expand that toolset.  If you have suggestions for new tools or for improving VolView in general, please leave feedback at our [Issue Tracker](https://github.com/Kitware/VolView/issues).
+3. **标注与测量**: 将DICOM图像拖放到VolView上，它们将被快速解析并呈现为缩略图。点击缩略图，数据将迅速加载，并以2D切片和3D电影级体素渲染的形式展示。 [问题跟踪](https://github.com/Kitware/VolView/issues).
 
-4. **Simple, Scalable, and Secure**: Simply visit a website to install VolView.  Once it is running, all data handling, processing, and visualization occurs on your machine.  Data you load into VolView never leaves your machine.  And VolView is designed to run on any web browser: from the one on your phone to the one running on your most powerful workstations.  It will take advantage of local GPU resources to accelerate its rendering processes, but if none is available, it will still generate the same high quality renderings, albeit a bit slower.
+4. **易用性、扩展性和安全性**: 只需访问一个网站安装VolView。一旦它开始运行，所有的数据处理、处理和可视化都在您的机器上进行。你载入VolView的数据永远不会离开你的机器。VolView可以在任何浏览器上运行:从你手机上的浏览器到你最强大的工作站上的浏览器。它将利用本地GPU资源来加速其渲染过程，但如果没有可用的，它仍然会生成相同的高质量渲染，尽管有点慢。
 
-5. **Foundation for the Future**: VolView is meant to serve as a foundation for your future projects and products.  It is open-source and free for commercial and academic use.  You may modify it yourself, or Kitware can help you customize it to support client-server workflows, provide streamlined interfaces and tools, and carry your brand.
+5. **面向未来**: VolView旨在为您未来的项目和产品奠定基础。它是开源的，免费供商业和学术使用。您可以自己修改它，或者Kitware可以帮助您自定义它，以支持客户机-服务器工作流，提供简化的接口和工具，并传播您的品牌。
 
-VolView is **not FDA approved for any purpose**, but Kitware can work with you to create a custom version of VolView and submit it for FDA approval.  For more information, contact [kitware@kitware.com](mailto:kitware@kitware.com).
+VolView **不是FDA批准用于任何目的**，但Kitware可以与您合作创建自定义版本的VolView并提交FDA批准。更多信息请联系[kitware@kitware.com](mailto:kitware@kitware.com)。
 
-## History
+## 历史
 
-VolView version 1.1 was released on Sept. 21, 1999 to provide clinical professionals with an intuitive interface to industry-leading volume rendering capabilities. Built using [VTK](https://vtk.org), it was extremely innovative at the time. It provided interactive volume renderings that did not require dedicated systems purchased for big-name medical device manufacturers. It supported Windows 95/98/NT, Sun, Silicon Graphics and Linux environments, and it provided custom level-of-detail and composite rendering techniques. That version of VolView thrived for over a decade, with the last release in June of 2011. In 2011, open source radiological viewers had become commonplace (many also built using VTK), and we pivoted our attention to 3D Slicer as an advance, community-support, extensible platform for research and clinical application development.
+VolView 1.1版本于1999年9月21日发布，为临床专业人员提供业界领先的体绘制功能的直观界面。使用[VTK](https://vtk.org)构建，在当时是极具创新性的。它提供了交互式体效果图，不需要为知名医疗设备制造商购买专用系统。它支持Windows 95/98/NT、Sun、Silicon Graphics和Linux环境，并提供定制的细节级和复合渲染技术。这个版本的VolView蓬勃发展了十多年，最后一次发布是在2011年6月。2011年，开放源代码的放射观察器已经变得司空见惯(许多也使用VTK构建)，我们将注意力转向3D Slicer，一个开源的，跨平台的，功能丰富的，面向医疗图像的，切片器作为一个先进的，社区支持的，可扩展的研究和临床应用开发平台。
 
-We have released VolView 4.0 in 2022 to again advance the radiological image visualization field.  Built using the javascript version of VTK (i.e., [vtk.js](https://kitware.github.io/vtk-js/index.html)), VolView 4.0 runs in web browsers and provides cinematic volume rendering capabilities that are only broadly available in dedicated systems sold by big-name medical device manufacturers.  We look forward to continuing to use the VolView platform for medical image visualization innovation, with plans to support WebXR for holographic and AR/VR devices as well as companion libraries for advance image analysis (e.g., [itk.wasm](https://github.com/InsightSoftwareConsortium/itk-wasm)) and AI algorithms (e.g., via [MONAI](https://monai.io)).
+我们在2022年发布了VolView 4.0，再次推动放射图像可视化领域的发展。使用VTK的javascript版本(即[VTK .js](https://kitware.github.io/vtk-js/index.html))构建，VolView 4.0在web浏览器中运行，并提供仅在大牌医疗设备制造商销售的专用系统中广泛提供的电影体积渲染功能。我们期待继续使用VolView平台进行医学图像可视化创新，计划支持全息和AR/VR设备的WebXR，以及用于高级图像分析的配套库(例如，[it.wasm](https://github.com/InsightSoftwareConsortium/itk-wasm))和AI算法(例如，通过[MONAI](https://monai.io))。
 
-## Roadmap
+## 路线图
 
-Details and progress on our roadmap are tracked in the VolView issue tracker on Github: https://github.com/Kitware/VolView/issues
+我们路线图的细节和进展在Github上的VolView问题跟踪器中进行跟踪:https://github.com/Kitware/VolView/issues
 
-Our next major release is planned for March, 2023, and it will support:
-* DICOM Web 
-* DICOM SEG, RT, and SR reading and writing 
-* ITK for image processing
-* Deep learning inference for image analysis
+我们的下一个主要版本计划于2023年3月发布，它将支持:
+* DICOM网站
+* DICOM SEG, RT, SR读写
+* ITK用于图像处理
+* 图像分析的深度学习推理
 
-## Citation
+## 引用
 
-If you find VolView to be useful for your work, please cite our paper on cinematic rendering:
+如果你发现VolView对你的工作有用，请引用我们关于电影渲染的论文:
 
 [Xu J, Thevenon G, Chabat T, McCormick M, Li F, Birdsong T, Martin K, Lee Y, and Aylward S, "Interactive, in-browser cinematic volume rendering of medical images", Computer Methods in Computer Methods in Biomechanics and Biomedical Engineering: Imaging & Visualization](https://www.tandfonline.com/doi/full/10.1080/21681163.2022.2145239)
 
-To refer to VolView's source code, please provide a link to https://github.com/Kitware/VolView and cite [DOI:10.5281/zendo.7328066](https://zenodo.org/badge/latestdoi/248073292)
+要参考VolView的源代码，请提供https://github.com/Kitware/VolView的链接并引用[DOI:10.5281/zendo.7328066](https://zenodo.org/badge/latestdoi/248073292)。
 
-## Acknowledgements
+## 致谢
 
 This work was funded, in part, by the NIH via NIBIB and NIGMS R01EB021396, NIBIB R01EB014955, NCI R01CA220681, and NINDS R42NS086295.
 
-## Related Work
+## 相关工作
 
-Learn about our related works at the following links:
-* Glance: General purpose scientific visualization in web browsers
+你可透过以下连结了解我们的相关工作:
+* Glance:在web浏览器中的通用科学可视化
     * https://kitware.github.io/glance/index.html
-* 3D Slicer: Desktop (C++ and Python), extensible radiological viewer
+* 3D Slicer: 桌面(c++和Python)，可扩展的放射查看器
     * https://slicer.org
-* trame: Python framework for quickly creating web application involving server-side rendering and computation.
+* trame: 用于快速创建涉及服务器端渲染和计算的web应用程序的Python框架。
     * https://kitware.github.io/trame/index.html
-* itk.wasm: Web-assembly version of ITK for in-browser image segmentation and registration, with outstanding DICOM support.
+* itk.wasm: 用于浏览器内图像分割和注册的ITK的Web-assembly版本，具有出色的DICOM支持。
     * https://github.com/InsightSoftwareConsortium/itk-wasm
-* vtk.js: A pure javascript library for advanced, interactive, scientific visualization in web browsers.
+* vtk.js: 一个纯javascript库，用于在web浏览器中进行高级，交互式，科学的可视化。
     * https://kitware.github.io/vtk-js/index.html

@@ -1,41 +1,39 @@
-# Loading Data
+# 加载数据
 
-The most straightfoward way to load files into VolView is to drag-and-drop them onto the central window when viewing the "Data" tab. You can also click within the central window to open a file browser and select the files or folders the "Open" button on the top-right toolbar. To complement different use-cases, there are a few other ways to open files.
+将文件加载到VolView中最直接的方法是在查看“数据”选项卡时将它们拖放到中央窗口。您也可以在中央窗口内单击打开文件浏览器，并通过右上方工具栏上的“打开”按钮选择文件或文件夹。为了补充不同的用例，还有一些其他的打开文件的方法。
 
 ## File formats
 
-VolView can load multiple DICOM files, folders containing multiple DICOM files, or zipped files containing multiple DICOM files. It also supports loading Nifti, NRRD, MHA, and 20+ other file formats thanks to the extensive I/O capabilities of ITK and itk.wasm, but care must be taken when loading non-DICOM data as the orientation of the data in those files cannot be assured.
+VolView支持加载多个DICOM文件、包含多个DICOM文件的文件夹或包含多个DICOM文件的压缩文件。由于ITK和ITK的广泛I/O功能，它还支持加载Nifti、NRRD、MHA和20多种其他文件格式。但是在加载非dicom数据时必须小心，因为不能保证这些文件中数据的方向。
 
-## Sample Data
+## 样本数据
 
-VolView includes links to a variety of sample data. Clicking on those thumbnails in the Data tab will download that data from Kitware data.kitware.com website into your local machine.
+VolView包含各种示例数据的链接。点击这些缩略图在数据选项卡将下载数据从Kitware data.kitware.com网站到您的本地机器。
 
 ## DICOMWeb
 
-VolView lists and downloads DICOM files served by a DICOMWeb service. The host address of the DICOMWeb service is configurable by:
+VolView列出并下载DICOMWeb服务提供的DICOM文件。DICOMWeb服务的主机地址可以通过以下方式配置:
 
-- VolView settings menu
-- `dicomweb` URL parameter. Example: `https://volview.kitware.app/?dicomweb=https://dicomweb-server.com`
-- At VolView build time with the `VITE_DICOM_WEB_URL` environment variable.
+- VolView 设置菜单
+- `dicomweb` URL参数。例如:`https://volview.kitware.app/?dicomweb=https://dicomweb-server.com`
+- 在VolView构建时使用 `VITE_DICOM_WEB_URL` 环境变量。
 
-The DICOMWeb address can point to a specific series in a study, and VolView will
-automatically load the whole series. Example URL:
+DICOMWeb地址可以指向研究中的特定系列，VolView将自动加载整个系列。示例URL:
 
 ```
 https://volview.kitware.app/?dicomweb=https://dicomweb-server.com/studies/unique-study-id-here/series/unique-series-id-here
 ```
 
-## Loading Remote Data via URLs
+## 通过url加载远程数据
 
-VolView supports loading remote datasets at application start through URL parameters. An example of this integration in action can be viewed here: [VolView with sample data](https://volview.kitware.app/?names=[prostate-mri.zip,neck.mha]&urls=[https://data.kitware.com/api/v1/item/63527c7311dab8142820a338/download,https://data.kitware.com/api/v1/item/620db4b84acac99f42e75420/download])
+VolView支持在应用程序启动时通过URL参数加载远程数据集。这个集成的例子可以在这里查看: [VolView 样本数据](https://volview.kitware.app/?names=[prostate-mri.zip,neck.mha]&urls=[https://data.kitware.com/api/v1/item/63527c7311dab8142820a338/download,https://data.kitware.com/api/v1/item/620db4b84acac99f42e75420/download])
 
-The URL is constructed with two parts, as shown below. The required parameter is the `urls` parameter, which specifies a list of URLs to download. An optional `names` parameter specifies the filename to go along with the file. If VolView cannot infer the file type, the filename's extension is used as a fallback. Loading multiple URLs is achieved by separating them with a comma.
-
+URL由两部分组成，如下所示。必需的参数是 `urls`参数，它指定要下载的url列表。可选的 `names` 参数指定文件的文件名。如果VolView无法推断文件类型，则使用文件名的扩展名作为回退。加载多个url是通过用逗号分隔它们来实现的。
 ```
 https://volview.kitware.app/?names=[prostate-mri.zip,neck.mha]&urls=[https://data.kitware.com/api/v1/item/63527c7311dab8142820a338/download,https://data.kitware.com/api/v1/item/620db4b84acac99f42e75420/download]
 ```
 
-### Google Cloud Storage Bucket and AWS S3 Support
+### 谷歌云存储桶和AWS S3支持
 
 VolView supports both Google Cloud Storage links of the form
 `gs://<bucket>/<object>` and Amazon AWS S3 buckets of the form
@@ -44,26 +42,23 @@ download everything underneath a given object prefix/folder. As an example,
 VolView will download and load every file that exists in the
 `gs://my-public-bucket/my-patient-folder/` folder.
 
-As a note of caution, there are no checks on the size of the total download. As
-such, be careful when specifying bucket-level prefixes!
+VolView支持形式为 `gs://<bucket>/<object>` 的谷歌云存储链接和形式为 `s3://<bucket>/<object>` 的Amazon AWS S3桶。VolView既可以下载单个对象，也可以下载给定对象前缀/文件夹下的所有内容。例如，VolView将下载并加载  `gs://my-public-bucket/my-patient-folder/` 文件夹中的每个文件。
 
-This feature currently only supports public buckets that are anonymously
-accessible. Authenticated support may be added at a future date. If you have a
-strong use-case for it, please request it via [our issue
-page](https://github.com/Kitware/VolView/issues)!
+需要注意的是，没有检查总下载的大小。因此，在指定桶级前缀时要小心!
+该特性目前只支持匿名访问的公共桶。将来可能会添加经过身份验证的支持。如果你有
+它的强大用例，请通过我们的问题请求页(https://github.com/Kitware/VolView/issues) !
 
 ### CORS
 
-In order for VolView to download and display your remote datasets, your server must be configured with the correct [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) configuration. CORS is a browser security mechanism that restricts how web applications can access remote resources. Without proper CORS configuration, VolView will be unable to download and display your datasets. Configuring your web server with CORS is beyond the scope of this documentation; please refer to your server's documentation.
+为了使VolView下载和显示您的远程数据集，您的服务器必须配置正确的[CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)配置。CORS是一种浏览器安全机制，它限制了web应用程序访问远程资源的方式。如果没有正确的CORS配置，VolView将无法下载和显示您的数据集。使用CORS配置您的web服务器超出了本文档的范围;请参考您的服务器的文档。
 
-## Layer Images
+## 层图像
 
-To overlay images in the 2D views, there is a layer button on image thumbnails. A PET image could be layered on top of a CT image. The layered image is resampled to the base image using the image's spatial metadata. If the spatial metadata does not place the images in the same coordinate system, the layer alignment will be incorrect.
+要在2D视图中覆盖图像，在图像缩略图上有一个图层按钮。PET图像可以叠加在CT图像上。使用图像的空间元数据将分层图像重新采样到基础图像。如果空间元数据没有将图像放置在同一坐标系中，则层对齐将是不正确的。
 
-To layer images:
+图层图像:
+1. 加载基本映像。
+2. 在“数据”页签中，单击上层数据集上的“添加图层”按钮。
+3. 在渲染选项卡下，一个不透明度滑块可以改变上层的透明度。
 
-1. Load the base image.
-1. On the Data tab, click the Add Layer button on the upper layer dataset.
-1. Under the Rendering tab, an opacity slider changes the transparency of the upper layer.
-
-![Add Layer](./assets/add-layer.jpg)
+![添加图层](./assets/add-layer.jpg)

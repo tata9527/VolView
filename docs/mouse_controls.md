@@ -1,22 +1,22 @@
-# Keyboard shortcuts
+# 键盘快捷键
 
-## Data management
+## 数据管理
 
-| Shortcut | Action |
+| 快捷方式  | 动作   |
 | -------- | ------ |
 
-## Slice
+## 切片
 
-| Shortcut    | Action         |
+| 快捷方式     | 动作           |
 | ----------- | -------------- |
 | Up arrow    | Next Slice     |
 | Right arrow | Next Slice     |
 | Down array  | Previous Slice |
 | Left array  | Previous Slice |
 
-## Mouse Controls
+## 鼠标控制
 
-| Action       | 2D              | 3D     |
+| 动作          | 2D              | 3D     |
 | ------------ | --------------- | ------ |
 | Left         | grayscale       | rotate |
 | Mid          | pan             | pan    |
